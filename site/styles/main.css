@@ -1,15 +1,31 @@
-body {
-  background-color: rgba(41, 11, 11, 0.63);
+@charset "UTF-8";
+html, body {
+  background: #000;
 }
 
 .header {
-  max-width: 1720px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  padding: 15px 0;
 }
 .header__logo {
   margin-left: 40px;
+  margin-top: 10px;
 }
 .header__logo img {
   max-width: 150px;
@@ -58,6 +74,32 @@ body {
 .header__nav ul li a:hover::after, .header__nav ul li a:active::after, .header__nav ul li a:focus::after {
   width: 100%;
 }
+.header__nav ul li:last-child a {
+  padding: 10px 20px;
+}
+.header__nav ul li:last-child a::before {
+  content: "";
+  position: absolute;
+  border-radius: 4px;
+  inset: 0;
+  background: red;
+  transform: skew(-15deg);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.header__nav ul li:last-child a::after {
+  display: none;
+}
+.header__nav ul li:last-child a:hover, .header__nav ul li:last-child a:active, .header__nav ul li:last-child a:focus {
+  color: black;
+}
+.header__nav ul li:last-child a:hover::after, .header__nav ul li:last-child a:active::after, .header__nav ul li:last-child a:focus::after {
+  width: none;
+}
+.header__nav ul li:last-child a:hover::before, .header__nav ul li:last-child a:active::before, .header__nav ul li:last-child a:focus::before {
+  background: rgba(255, 255, 255, 0.9098039216);
+  scale: 1.05;
+}
 
 @font-face {
   font-family: inter;
@@ -75,4 +117,198 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to top, #000000 0%, #000000 20%, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.4) 100%, rgba(0, 0, 0, 0) 100%), url("../img/фон.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top, 90% center;
+  position: relative;
+  padding: 100px 0 200px 0;
+  overflow-x: hidden;
+  z-index: 1;
+}
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1720px;
+  margin-left: 12%;
+}
+.hero-container h2 {
+  font-size: 32px;
+  font-family: russoone;
+  color: rgba(255, 0, 0, 0.8);
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+.hero-container h1 {
+  font-size: 128px;
+  font-family: russoone;
+  font-style: italic;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.9098039216);
+  margin-bottom: 16px;
+}
+.hero-container h1 span {
+  color: rgba(255, 0, 0, 0.8);
+}
+.hero-container p {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 1px;
+  font-family: inter;
+  padding-left: 24px;
+  border-left: 5px solid red;
+  color: #808080;
+  margin-bottom: 64px;
+}
+.hero-container .hero-container__btn {
+  display: flex;
+  justify-content: start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-container .hero-container__btn-start {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9098039216);
+  padding: 24px 40px;
+  font-size: 32px;
+  font-family: russoone;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+.hero-container .hero-container__btn-start::before {
+  content: "";
+  position: absolute;
+  border-radius: 4px;
+  inset: 0;
+  background: red;
+  transform: skew(-15deg);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.hero-container .hero-container__btn-start:hover {
+  color: black;
+}
+.hero-container .hero-container__btn-start:hover::before {
+  background: rgba(255, 255, 255, 0.9098039216);
+  scale: 1.05;
+}
+.hero-container .hero-container__btn-more {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9098039216);
+  padding: 24px 40px;
+  font-size: 32px;
+  font-family: russoone;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+.hero-container .hero-container__btn-more::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: transparent;
+  transform: skew(-15deg);
+  z-index: -1;
+  border: 4px solid rgba(255, 255, 255, 0.9098039216);
+  transition: all 0.3s ease;
+}
+.hero-container .hero-container__btn-more:hover {
+  color: black;
+}
+.hero-container .hero-container__btn-more:hover::before {
+  background: rgba(255, 255, 255, 0.9098039216);
+  scale: 1.05;
+}
+
+.dop {
+  width: 100%;
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #1a1a1a 0%, #121212 30%, #080808 60%, #000000 100%);
+}
+.dop-container {
+  max-width: 1720px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.dop .dop__element {
+  min-width: 300px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  gap: 16px;
+  padding: 20px 30px;
+  z-index: 1;
+}
+.dop .dop__element::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  transform: skewX(-15deg);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+.dop .dop__element::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  transform: skewX(-15deg);
+  z-index: -1;
+  background: linear-gradient(to top, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0.8)) left/2px 100% no-repeat, linear-gradient(to right, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0.8)) top/0% 2px no-repeat, linear-gradient(to bottom, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0.8)) right/2px 0% no-repeat, linear-gradient(to left, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0.8)) bottom/0% 2px no-repeat;
+  transition: background-size 0.35s ease, background-position 0.35s ease;
+  transition-delay: 0s, 0.35s, 0.3s, 0.45s;
+}
+.dop .dop__element:hover::after {
+  background-size: 2px 100%, 100% 2px, 2px 100%, 100% 2px;
+}
+.dop .dop__element img {
+  width: 50px;
+  height: auto;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.dop .dop__element h3 {
+  font-size: 24px;
+  font-family: russoone;
+  color: rgba(255, 255, 255, 0.9098039216);
+}
+.dop .dop__element p {
+  font-size: 18px;
+  line-height: 28px;
+  font-family: inter;
+  color: #808080;
+}
+
+@font-face {
+  font-family: inter;
+  src: url(../fonts/Inter_18pt-Medium.ttf);
+}
+@font-face {
+  font-family: oswald;
+  src: url(../fonts/Oswald-Medium.ttf);
+}
+@font-face {
+  font-family: russoone;
+  src: url(../fonts/RussoOne-Regular.ttf);
 }/*# sourceMappingURL=main.css.map */

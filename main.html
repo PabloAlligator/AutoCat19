@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="site/styles/main.css">
     <title>Autocat19</title>
 </head>
+
 <body>
     <header class="header">
         <div class="header__logo">
@@ -46,77 +48,68 @@
         </div>
     </header>
 
-    <!-- .hero-container__btn {
-            display: flex;
-            justify-content: start;
-            gap: 24px;
-            flex-wrap: wrap;
+    <!--  hero -->
 
-            &-start {
-                position: relative;
-                text-decoration: none;
-                color: $white;
-                padding: 24px 40px;
-                font-size: 32px;
-                font-family: $RussoOne;
-                z-index: 3;
-                transition: all 0.3s ease;
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <h2>
+                ПРЕМИАЛЬНЫЙ АВТОСЕРВИС
+            </h2>
 
+            <h1>
+                ТВОЯ<br>
+                <span>ТЕРРИТОРИЯ<br>
+                    МОЩНОСТИ</span>
+            </h1>
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    border-radius: 4px;
-                    inset: 0;
-                    background: $red;
-                    transform: skew(-15deg);
-                    z-index: -1;
-                    transition: all 0.3s ease;
-                }
+            <p>
+                Полный спектр услуг от планового ТО до сложного ремонта двигателя. Мы гарантируем высокое качество,
+                доступные цены и индивидуальный подход к каждому клиенту.
+            </p>
 
-                &:hover {
-                    color: $black;
+            <div class="hero-container__btn">
+                <a href="https://t.me/SodruzhestvoAbakan_bot" class="hero-container__btn-start">ЗАПИСАТЬСЯ</a>
+                <a href="#about" class="hero-container__btn-more">УДАЛЕНИЕ КАТАЛИЗАТОРА</a>
+            </div>
+        </div>
+    </section>
 
-                    &::before {
-                        background: $white;
-                        scale: 1.05;
-                    }
-                }
-            }
+    <!-- section dop -->
 
-            &-more {
-                position: relative;
-                text-decoration: none;
-                color: $white;
-                padding: 24px 40px;
-                font-size: 32px;
-                font-family: $RussoOne;
-                z-index: 3;
-                transition: all 0.3s ease;
+    <section class="dop">
+        <div class="dop-container">
+            <div class="dop__element">
+                <div class="dop__element-img">
+                    <img src="site/img/icons8-timer-50.png" alt="timer">
+                </div>
+                <div class="dop__element-text">
+                    <h3><i>БЕССРОЧНАЯ ГАРАНТИЯ</i></h3>
+                    <p>Уверены в качестве каждой детали</p>
+                </div>
+            </div>
 
+            <div class="dop__element">
+                <div class="dop__element-img">
+                    <img src="site/img/icons8-fire-50.png" alt="timer">
+                </div>
+                <div class="dop__element-text">
+                    <h3><i>ЗОНА ОТДЫХА</i></h3>
+                    <p>Ваше ожидание - наша забота</p>
+                </div>
+            </div>
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    border-radius: 4px;
-                    background: transparent;
-                    transform: skew(-15deg);
-                    z-index: -1;
-                    border: 4px solid $white;
-                    transition: all 0.3s ease;
-                }
-
-                &:hover {
-                    color: $black;
-
-                    &::before {
-                        background: $white;
-                        scale: 1.05;
-                    }
-                }
-            }
-        } -->
+             <div class="dop__element">
+                <div class="dop__element-img">
+                    <img src="site/img/icons8-fire-50.png" alt="timer">
+                </div>
+                <div class="dop__element-text">
+                    <h3><i>НАПИТКИ БЕСПЛАТНО</i></h3>
+                    <p>Кофе, чай, вода всегда под рукой</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="site/script/scripts.js"></script>
 </body>
+
 </html>

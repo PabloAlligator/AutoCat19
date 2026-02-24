@@ -1,7 +1,264 @@
+$white: #ffffffe8;
+$black: #000000;
+$red: #ff0000cc;
+$grey: #808080;
+$inter: inter;
+$RussoOne: russoone;
+
 @import '../styles/header.scss';
+
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(to top,
+            #000000 0%,
+            #000000 20%,
+            rgba(0, 0, 0, 0.9) 40%,
+            rgba(0, 0, 0, 0.7) 60%,
+            rgba(0, 0, 0, 0.4) 100%,
+            rgba(0, 0, 0, 0) 100%),
+        url('../img/фон.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:
+        left top,
+        90% center;
+    position: relative;
+    padding: 100px 0 200px 0;
+    overflow-x: hidden;
+    z-index: 1;
+
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1720px;
+        margin-left: 12%;
+
+        h2 {
+            font-size: 32px;
+            font-family: $RussoOne;
+            color: $red;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 128px;
+            font-family: $RussoOne;
+            font-style: italic;
+            letter-spacing: 5px;
+            color: $white;
+            margin-bottom: 16px;
+
+            span {
+                color: $red;
+            }
+        }
+
+        p {
+            font-size: 32px;
+            line-height: 40px;
+            letter-spacing: 1px;
+            font-family: $inter;
+            padding-left: 24px;
+            border-left: 5px solid red;
+            color: $grey;
+            margin-bottom: 64px;
+        }
+
+        .hero-container__btn {
+            display: flex;
+            justify-content: start;
+            gap: 24px;
+            flex-wrap: wrap;
+
+            &-start {
+                position: relative;
+                text-decoration: none;
+                color: $white;
+                padding: 24px 40px;
+                font-size: 32px;
+                font-family: $RussoOne;
+                z-index: 3;
+                transition: all 0.3s ease;
+
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    border-radius: 4px;
+                    inset: 0;
+                    background: red;
+                    transform: skew(-15deg);
+                    z-index: -1;
+                    transition: all 0.3s ease;
+                }
+
+                &:hover {
+                    color: black;
+
+                    &::before {
+                        background: $white;
+                        scale: 1.05;
+                    }
+                }
+            }
+
+            &-more {
+                position: relative;
+                text-decoration: none;
+                color: $white;
+                padding: 24px 40px;
+                font-size: 32px;
+                font-family: $RussoOne;
+                z-index: 3;
+                transition: all 0.3s ease;
+
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 4px;
+                    background: transparent;
+                    transform: skew(-15deg);
+                    z-index: -1;
+                    border: 4px solid $white;
+                    transition: all 0.3s ease;
+                }
+
+                &:hover {
+                    color: black;
+
+                    &::before {
+                        background: $white;
+                        scale: 1.05;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//     section dop
+
+.dop {
+    width: 100%;
+    padding: 70px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,
+            #1a1a1a 0%,
+            #121212 30%,
+            #080808 60%,
+            #000000 100%);
+
+    &-container {
+        max-width: 1720px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+   .dop__element {
+    min-width: 300px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+    gap: 16px;
+    padding: 20px 30px;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 4px;
+        transform: skewX(-15deg);
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        z-index: -1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 4px;
+        transform: skewX(-15deg);
+        z-index: -1;
+        
+       
+        background: 
+            linear-gradient(to top, $red, $red) left / 2px 100% no-repeat,  
+            linear-gradient(to right, $red, $red) top / 0% 2px no-repeat,  
+            linear-gradient(to bottom, $red, $red) right / 2px 0% no-repeat,
+            linear-gradient(to left, $red, $red) bottom / 0% 2px no-repeat;    
+        
+        transition: 
+            background-size 0.35s ease,
+            background-position 0.35s ease;
+        transition-delay: 0s, 0.35s, 0.3s, 0.45s;
+    }
+
+    &:hover::after {
+        background-size: 
+            2px 100%,   
+            100% 2px,   
+            2px 100%,   
+            100% 2px;  
+    }
+
+
+        img {
+            width: 50px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-family: $RussoOne;
+            color: $white;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 28px;
+            font-family: $inter;
+            color: $grey;
+        }
+    }
+}
+
+@font-face {
+    font-family: inter;
+    src: url(../fonts/Inter_18pt-Medium.ttf);
+}
+
+@font-face {
+    font-family: oswald;
+    src: url(../fonts/Oswald-Medium.ttf);
+}
+
+@font-face {
+    font-family: russoone;
+    src: url(../fonts/RussoOne-Regular.ttf);
 }

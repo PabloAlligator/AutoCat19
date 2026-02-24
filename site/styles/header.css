@@ -1,15 +1,30 @@
-body {
-  background-color: rgba(41, 11, 11, 0.63);
+html, body {
+  background: #000;
 }
 
 .header {
-  max-width: 1720px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  padding: 15px 0;
 }
 .header__logo {
   margin-left: 40px;
+  margin-top: 10px;
 }
 .header__logo img {
   max-width: 150px;
@@ -57,6 +72,32 @@ body {
 }
 .header__nav ul li a:hover::after, .header__nav ul li a:active::after, .header__nav ul li a:focus::after {
   width: 100%;
+}
+.header__nav ul li:last-child a {
+  padding: 10px 20px;
+}
+.header__nav ul li:last-child a::before {
+  content: "";
+  position: absolute;
+  border-radius: 4px;
+  inset: 0;
+  background: red;
+  transform: skew(-15deg);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.header__nav ul li:last-child a::after {
+  display: none;
+}
+.header__nav ul li:last-child a:hover, .header__nav ul li:last-child a:active, .header__nav ul li:last-child a:focus {
+  color: black;
+}
+.header__nav ul li:last-child a:hover::after, .header__nav ul li:last-child a:active::after, .header__nav ul li:last-child a:focus::after {
+  width: none;
+}
+.header__nav ul li:last-child a:hover::before, .header__nav ul li:last-child a:active::before, .header__nav ul li:last-child a:focus::before {
+  background: rgba(255, 255, 255, 0.9098039216);
+  scale: 1.05;
 }
 
 @font-face {
