@@ -1,0 +1,93 @@
+$white: #ffffffe8;
+$inter: inter;
+$RussoOne: russoone;
+
+
+body {
+    background-color: rgba(41, 11, 11, 0.63);
+}
+
+.header {
+    max-width: 1720px;
+    width: 100%;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+
+    &__logo {
+        margin-left: 40px;
+
+        img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            // border: 1px solid red;
+        }
+    }
+
+    &__nav {
+        margin-right: 40px;
+        // border: 1px solid orange;
+        display: flex;
+        align-items: center;
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            li {
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    font-size: clamp(16px, 5vw, 22px);
+                    line-height: 30px;
+                    font-weight: 500;
+                    font-family: $RussoOne;
+                    letter-spacing: 1px;
+                    position: relative;
+                    transition: color 0.3s ease;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;
+                        width: 0;
+                        height: 3px;
+                        background-color: red;
+                        transition: width 0.4s ease;
+                    }
+
+                    &:hover,
+                    &:active, 
+                    &:focus{
+                        color: $white;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@font-face {
+    font-family: inter;
+    src: url(../fonts/Inter_18pt-Medium.ttf);
+}
+
+@font-face {
+    font-family: oswald;
+    src: url(../fonts/Oswald-Medium.ttf);
+}
+
+@font-face {
+    font-family: russoone;
+    src: url(../fonts/RussoOne-Regular.ttf);
+}

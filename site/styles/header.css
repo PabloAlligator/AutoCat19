@@ -1,1 +1,73 @@
-/*# sourceMappingURL=header.css.map */
+body {
+  background-color: rgba(41, 11, 11, 0.63);
+}
+
+.header {
+  max-width: 1720px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header__logo {
+  margin-left: 40px;
+}
+.header__logo img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header__nav {
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+}
+.header__nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header__nav ul li {
+  list-style: none;
+}
+.header__nav ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9098039216);
+  font-size: clamp(16px, 5vw, 22px);
+  line-height: 30px;
+  font-weight: 500;
+  font-family: russoone;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.header__nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: red;
+  transition: width 0.4s ease;
+}
+.header__nav ul li a:hover, .header__nav ul li a:active, .header__nav ul li a:focus {
+  color: rgba(255, 255, 255, 0.9098039216);
+}
+.header__nav ul li a:hover::after, .header__nav ul li a:active::after, .header__nav ul li a:focus::after {
+  width: 100%;
+}
+
+@font-face {
+  font-family: inter;
+  src: url(../fonts/Inter_18pt-Medium.ttf);
+}
+@font-face {
+  font-family: oswald;
+  src: url(../fonts/Oswald-Medium.ttf);
+}
+@font-face {
+  font-family: russoone;
+  src: url(../fonts/RussoOne-Regular.ttf);
+}/*# sourceMappingURL=header.css.map */
