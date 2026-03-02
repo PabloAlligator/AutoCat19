@@ -79,3 +79,28 @@ window.addEventListener('scroll', () => {
     successMsg.style.display = 'none';
     errorMsg.style.display = 'none';
   }
+
+//   скролл
+  document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      const headerHeight = document.querySelector('header')?.offsetHeight || 0; // высота шапки
+      const topOffset = headerHeight + 20;
+
+      const topPos = target.getBoundingClientRect().top + window.pageYOffset - topOffset;
+
+      window.scrollTo({
+        top: topPos,
+        behavior: 'smooth'
+      });
+    });
+  });
+});
