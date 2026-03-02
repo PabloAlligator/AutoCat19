@@ -116,6 +116,9 @@ body {
   .header__burger {
     display: flex;
   }
+  .header__logo img {
+    max-width: 120px;
+  }
   .header__nav {
     position: fixed;
     top: 0;
@@ -165,6 +168,19 @@ body {
   }
   .header__nav a {
     font-size: 28px;
+  }
+}
+@media (max-width: 768px) {
+  .header__logo {
+    margin-left: 20px;
+  }
+  .header__logo img {
+    max-width: 100px;
+  }
+}
+@media (max-width: 480px) {
+  .header__logo img {
+    max-width: 80px;
   }
 }
 @font-face {

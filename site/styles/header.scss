@@ -141,6 +141,11 @@ body {
         display: flex;
     }
 
+    .header__logo {
+        img {
+            max-width: 120px;
+        }
+    }
 
     .header__nav {
         position: fixed;
@@ -210,6 +215,22 @@ body {
 
     }
 
+}
+
+@media (max-width: 768px) {
+    .header__logo {
+        margin-left: 20px; // меньше отступ слева
+    }
+
+    .header__logo img {
+        max-width: 100px; // основной размер для мобильных
+    }
+}
+
+@media (max-width: 480px) {
+    .header__logo img {
+        max-width: 80px; // совсем маленький для узких экранов
+    }
 }
 
 @font-face {
