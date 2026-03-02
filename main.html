@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="site/styles/main.css">
     <link rel="shortcut icon" href="site/img/logo3-Photoroom.png">
     <title>Autocat19</title>
@@ -11,42 +12,29 @@
 
 <body>
     <header class="header">
+
         <div class="header__logo">
-            <img src="site/img/logo3-Photoroom.png" alt="logo">
+            <img src="site/img/logo3-Photoroom.png">
         </div>
-        <div class="header__nav">
+
+        <div class="header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="header__nav">
             <ul>
-                <li>
-                    <a href="#">
-                        УСЛУГИ
-                    </a>
-                </li>
 
-                <li>
-                    <a href="#">
-                        КАТАЛИЗАТОР
-                    </a>
-                </li>
+                <li><a href="#">УСЛУГИ</a></li>
+                <li><a href="#">КАТАЛИЗАТОР</a></li>
+                <li><a href="#">О НАС</a></li>
+                <li><a href="#">КОНТАКТЫ</a></li>
+                <li><a href="#">ЗАПИСАТЬСЯ</a></li>
 
-                <li>
-                    <a href="#">
-                        О НАС
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        КОНТАКТЫ
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        ЗАПИСАТЬСЯ
-                    </a>
-                </li>
             </ul>
-        </div>
+        </nav>
+
     </header>
 
     <!--  hero -->
@@ -64,13 +52,66 @@
             </h1>
 
             <p>
-                Полный спектр услуг от планового ТО до сложного ремонта двигателя. Мы гарантируем высокое качество,
-                доступные цены и индивидуальный подход к каждому клиенту.
+                Полный спектр услуг от планового ТО до сложного ремонта двигателя. <br>Мы гарантируем высокое качество,
+                доступные цены и <br> индивидуальный подход к каждому клиенту.
             </p>
 
             <div class="hero-container__btn">
                 <a href="https://t.me/SodruzhestvoAbakan_bot" class="hero-container__btn-start">ЗАПИСАТЬСЯ</a>
                 <a href="#about" class="hero-container__btn-more">УДАЛЕНИЕ КАТАЛИЗАТОРА</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- section about -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="about-label">AUTOCAT SERVICE</span>
+
+                <h2 class="about-title">
+                    Ваш автомобиль<br>
+                    <span>в надёжных руках</span>
+                </h2>
+
+                <div class="about-description">
+                    <p>Специализированный автосервис в Абакане с фокусом на удаление и замену катализаторов, выкуп по
+                        высоким ценам, чип-тюнинг и комплексный ремонт любой сложности.</p>
+                    <p>Честные цены, прозрачная диагностика, современное оборудование и комфорт для клиента — наш
+                        ежедневный стандарт уже более 5 лет.</p>
+                </div>
+
+                <ul class="about-features">
+                    <li>
+                        <strong>До 100 000 ₽/кг</strong>
+                        <span>выкуп катализаторов</span>
+                    </li>
+                    <li>
+                        <strong>День в день</strong>
+                        <span>большинство работ</span>
+                    </li>
+                    <li>
+                        <strong>0 скрытых платежей</strong>
+                        <span>полная прозрачность</span>
+                    </li>
+                    <li>
+                        <strong>Комфорт</strong>
+                        <span>зона ожидания, Wi-Fi, бесплатные напитки, телевизор</span>
+                    </li>
+                </ul>
+
+                <div class="about-cta">
+                    <a href="https://t.me/SodruzhestvoAbakan_bot" class="btn btn-primary">Записаться онлайн</a>
+                    <a href="tel:+79831905050" class="btn btn-secondary">+7 (983) 190-50-50</a>
+                </div>
+            </div>
+
+            <div class="about-visual">
+                <div class="about-image-frame">
+                    <video class="about-image" autoplay loop muted playsinline loading="lazy">
+                        <source src="site/img/gif.MP4" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </div>
     </section>
@@ -118,24 +159,35 @@
             <img src="site/img/icons8-settings-50.png" alt="">
             <h3>СЛЕСАРНЫЙ РЕМОНТ</h3>
             <p>Ремонт ходовой, подвески, тормозной системы любой сложности</p>
-            <a href="#"></a>
+            <a href="#">
+                <img src="site/img/icons8-шеврон-вниз-в-круге-50.png"
+                    alt="Ремонт ходовой, подвески, тормозной системы любой сложности">
+            </a>
         </div>
 
         <div class="uslugi__element">
-            <img src="site/img/icons8-timer-50 (1).png" alt="">
+            <img src="site/img/icons8-timer-50 (1).png"
+                alt="Компьютерная диагностика всех систем автомобиля на профессиональном оборудованиии">
             <h3>ДИАГНОСТИКА</h3>
             <p>Компьютерная диагностика всех систем автомобиля на профессиональном оборудованиии</p>
-            <a href="#"></a>
+            <a href="#">
+                <img src="site/img/icons8-шеврон-вниз-в-круге-50.png"
+                    alt="Компьютерная диагностика всех систем автомобиля на профессиональном оборудованиии">
+            </a>
         </div>
 
         <div class="uslugi__element">
-            <img src="site/img/icons8-timer-50 (1).png" alt="">
+            <img src="site/img/icons8-timer-50 (1).png" alt="Регламентное обслуживание с сохранением гарантии
+                Оригинальные масла">
             <h3>ТО И ЗАМЕНА МАСЛА</h3>
             <p>
                 Регламентное обслуживание с сохранением гарантии <br>
                 Оригинальные масла
             </p>
-            <a href="#"></a>
+            <a href="#">
+                <img src="site/img/icons8-шеврон-вниз-в-круге-50.png" alt="Регламентное обслуживание с сохранением гарантии
+                Оригинальные масла">
+            </a>
         </div>
 
         <div class="uslugi__element">
@@ -144,7 +196,10 @@
             <p>
                 Увличение мощности, отключение EGR/DiPF, прошивка под Евро-2/3/4, удаление катализатора
             </p>
-            <a href="#"></a>
+            <a href="#">
+                <img src="site/img/icons8-шеврон-вниз-в-круге-50.png"
+                    alt="Увличение мощности, отключение EGR/DiPF, прошивка под Евро-2/3/4, удаление катализатора">
+            </a>
         </div>
 
         <div class="uslugi__element">
@@ -153,7 +208,10 @@
             <p>
                 Каптильный ремонт ДВС, замена ГРМ, ремонт ГБЦ с гарантией
             </p>
-            <a href="#"></a>
+            <a href="#">
+                <img src="site/img/icons8-шеврон-вниз-в-круге-50.png"
+                    alt="Каптильный ремонт ДВС, замена ГРМ, ремонт ГБЦ с гарантией">
+            </a>
         </div>
 
         <div class="uslugi__element">
@@ -162,9 +220,155 @@
             <p>
                 Высокоточная регулировка углов установки колес на профессиональном стенде
             </p>
-            <a href="#"></a>
+            <a href="#">
+                <img src="site/img/icons8-шеврон-вниз-в-круге-50.png"
+                    alt="Высокоточная регулировка углов установки колес на профессиональном стенде">
+            </a>
         </div>
     </section>
+
+    <!-- катализатор -->
+
+    <section class="catalizator">
+        <div class="catalizator__text">
+            <h4>СПЕЦПРЕДЛОЖЕНИЕ</h4>
+            <h2>УДАЛЕНИЕ <br><span>КАТАЛИЗАТОРА</span></h2>
+            <p>Машиина "троит"? Горит Check Engine? Увеличился расход? Решим проблему раз и навсегда!</p>
+            <ul>
+                <li>Бесплатная диагностика выхлопной системы;</li>
+                <li>Установка качественного пламегасителя;</li>
+                <li>Прошивка под Евро-2 (Чип-тюнинг) в подарок;</li>
+                <li>Пожизненная гарантия на сварочные работы.</li>
+            </ul>
+            <a class="catalizator-btn" href="#">ЗАПИСАТЬСЯ БЕСПЛАТНО</a>
+        </div>
+        <div class="catalizator__img">
+            <img src="site/img/катализатор.png" alt="">
+        </div>
+    </section>
+
+    <!--  как нас найти -->
+    <section class="where-find">
+        <div class="where-find__container">
+            <div class="where-find__text">
+                <h2>ГДЕ НАС НАЙТИ?</h2>
+                <p>Мы расположены в промзоне Абаканвагонмаш — удобно доехать на машине или такси.</p>
+                <ul>
+                    <li>Адрес: г. Абакан, квартал Молодёжный, 22ж</li>
+                    <li>Режим работы: Пн–Пт 09:00–18:00, Сб 09:00–17:00</li>
+                    <li>Телефоны: +7 (983) 190-50-50, +7 (3902) 21-44-22</li>
+                    <li>Рядом с ФСИН, большая парковка</li>
+                </ul>
+                <p>Приезжайте — решим любую проблему с выхлопом и не только!</p>
+            </div>
+
+            <div class="where-find__map">
+                <div class="where-find__map-frame">
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?ll=91.36018%2C53.72826&z=16&lang=ru_RU&mode=whatshere&whatshere%5Bpoint%5D=91.36018%2C53.72826&whatshere%5Bzoom%5D=16"
+                        width="100%" height="100%" frameborder="0" allowfullscreen="true"
+                        style="border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка теперь под секцией, центрирована -->
+        <div class="where-find__btn-wrapper">
+            <a href="https://yandex.ru/maps/?rtext=~91.36018,53.72826&rtt=auto" target="_blank"
+                rel="noopener noreferrer" class="where-find-btn">
+                ПОСТРОИТЬ МАРШРУТ
+            </a>
+        </div>
+    </section>
+
+    <!-- фора обратной связи -->
+
+    <section class="connect" id="connect">
+        <div class="connect__container">
+            <div class="connect-form">
+                <div class="form-card">
+                    <h2 class="form-title">ЗАПИШИСЬ НА СЕРВИС</h2>
+
+                    <!-- Успех -->
+                    <div class="form-success" id="successMessage" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Заявка отправлена!</h3>
+                        <p>Мы получили вашу заявку и свяжемся в ближайшее время.</p>
+                        <button type="button" class="form-btn form-btn--secondary" onclick="resetForm()">Отправить
+                            ещё</button>
+                    </div>
+
+                    <!-- Ошибка -->
+                    <div class="form-error" id="errorMessage" style="display: none;">
+                        <div class="error-icon">✕</div>
+                        <h3>Ошибка отправки</h3>
+                        <p>Попробуйте позже или позвоните: +7 (983) 190-50-50</p>
+                    </div>
+
+                    <!-- Форма -->
+                    <form class="form-content" id="connectForm" action="send-mail.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-input" placeholder="Ваше имя" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" name="phone" class="form-input" placeholder="Телефон" required
+                                pattern="[0-9]{10,11}" inputmode="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <select name="service" class="form-input form-select" required>
+                                <option value="" disabled selected>Выберите услугу</option>
+                                <option value="Удаление катализатора">Удаление катализатора</option>
+                                <option value="Прошивка Евро-2">Прошивка Евро-2 + чип-тюнинг</option>
+                                <option value="Выкуп катализатора">Выкуп катализатора</option>
+                                <option value="Диагностика выхлопа">Диагностика выхлопной системы</option>
+                                <option value="Другое">Другое (укажите в комментарии)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="comment" class="form-input form-textarea"
+                                placeholder="Комментарий / удобное время" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="form-btn" id="submitBtn">
+                            <span class="btn-text">ЗАПИСАТЬСЯ БЕСПЛАТНО</span>
+                        </button>
+
+                        <p class="form-disclaimer">
+                            Нажимая кнопку, вы соглашаетесь с <a href="#" class="disclaimer-link">политикой
+                                конфиденциальности</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- футер -->
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__logo">AUTOCAT SERVICE</div>
+
+            <div class="footer__contacts">
+                <a href="tel:+79831905050" class="footer__phone">+7 (983) 190-50-50</a>
+                <a href="tel:+73902214422" class="footer__phone">+7 (3902) 21-44-22</a>
+                <a href="https://t.me/SodruzhestvoAbakan_bot" target="_blank" class="footer__telegram">
+                    Записаться в Telegram
+                </a>
+                <span class="footer__address">Абакан, Молодёжный квартал, 22ж</span>
+            </div>
+
+            <div class="footer__bottom">
+                <span class="footer__copy">© 2025–2026 AutoCat Service. Все права защищены.</span>
+                <a href="#" class="footer__policy">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="site/script/scripts.js"></script>
 </body>
 

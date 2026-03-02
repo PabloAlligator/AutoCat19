@@ -2,65 +2,78 @@ $white: #ffffffe8;
 $inter: inter;
 $RussoOne: russoone;
 
-html, body {
+html,
+body {
     background: #000;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
-   width: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
     position: sticky;
     top: 0;
-    left: 0; // Добавляем прилипание к левому краю
-    right: 0; // Добавляем прилипание к правому краю
     z-index: 1000;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     padding: 20px 0;
     transition: all 0.3s ease;
 
-
-    // УДАЛИТЕ этот блок - он создает проблему
-    // &::before {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     background: transparent;
-    //     z-index: -1;
-    // }
-    
     &.scrolled {
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(5px);
         padding: 15px 0;
+        backdrop-filter: blur(5px);
     }
+
 
     &__logo {
         margin-left: 40px;
-        margin-top: 10px;
+        z-index: 2000;
 
         img {
             max-width: 150px;
             height: auto;
             display: block;
-            object-fit: contain;
+        }
+    }
+
+    &__burger {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        margin-right: 40px;
+        cursor: pointer;
+        z-index: 2000;
+
+        span {
+            width: 30px;
+            height: 3px;
+            background: white;
+            transition: 0.4s;
+        }
+
+        &.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        &.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
         }
     }
 
     &__nav {
         margin-right: 40px;
-        display: flex;
-        align-items: center;
 
         ul {
             display: flex;
+            gap: 25px;
             align-items: center;
-            gap: 20px;
 
             li {
                 list-style: none;
@@ -68,69 +81,53 @@ html, body {
                 a {
                     text-decoration: none;
                     color: $white;
-                    font-size: clamp(16px, 5vw, 22px);
-                    line-height: 30px;
-                    font-weight: 500;
+                    font-size: clamp(16px, 2vw, 20px);
                     font-family: $RussoOne;
                     letter-spacing: 1px;
                     position: relative;
-                    transition: color 0.3s ease;
+                    transition: 0.3s;
 
                     &::after {
                         content: '';
                         position: absolute;
-                        bottom: -4px;
+                        bottom: -5px;
                         left: 0;
                         width: 0;
-                        height: 3px;
-                        background-color: red;
-                        transition: width 0.4s ease;
+                        height: 2px;
+                        background: red;
+                        transition: 0.4s;
                     }
 
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        color: $white;
-
-                        &::after {
-                            width: 100%;
-                        }
+                    &:hover::after {
+                        width: 100%;
                     }
                 }
 
-                &:last-child {
-                    a {
-                        padding: 10px 20px;
+                &:last-child a {
+                    padding: 10px 20px;
+                    color: white;
 
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            border-radius: 4px;
-                            inset: 0;
-                            background: red;
-                            transform: skew(-15deg);
-                            z-index: -1;
-                            transition: all 0.3s ease;
-                        }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background: red;
+                        transform: skew(-15deg);
+                        z-index: -1;
+                        transition: 0.3s;
+                    }
 
-                        &::after {
-                            display: none;
-                        }
+                    &::after {
+                        display: none;
+                    }
 
-                        &:hover,
-                        &:active,
-                        &:focus {
-                            color: black;
+                    &:hover {
+                        color: black;
+                    }
 
-                            &::after {
-                                width: none;
-                            }
-
-                            &::before {
-                                background: $white;
-                                scale: 1.05;
-                            }
-                        }
+                    &:hover::before {
+                        background: white;
+                        transform: skew(-15deg) scale(1.05);
                     }
                 }
             }
@@ -138,14 +135,86 @@ html, body {
     }
 }
 
-@font-face {
-    font-family: inter;
-    src: url(../fonts/Inter_18pt-Medium.ttf);
+@media (max-width: 1024px) {
+
+    .header__burger {
+        display: flex;
+    }
+
+
+    .header__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.97);
+        backdrop-filter: blur(30px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: 0.5s;
+        margin: 0;
+    }
+
+
+    .header__nav.active {
+        transform: translateY(0);
+    }
+
+
+    .header__nav ul {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0;
+    }
+
+    .header__nav ul li {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 0.4s;
+    }
+
+
+    .header__nav.active ul li {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+
+    .header__nav.active ul li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .header__nav.active ul li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .header__nav.active ul li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .header__nav.active ul li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .header__nav.active ul li:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+
+    .header__nav a {
+        font-size: 28px;
+
+    }
+
 }
 
 @font-face {
-    font-family: oswald;
-    src: url(../fonts/Oswald-Medium.ttf);
+    font-family: inter;
+    src: url(../fonts/Inter_18pt-Medium.ttf);
 }
 
 @font-face {
