@@ -90,7 +90,7 @@ if (form) {
         // Отправка
         emailjs.send(
             'shum.pasha.03@gmail.com',     // твой Service ID
-            'template_ghqyc7p',           // твой Template ID
+            'template_kqa0m2l',           // твой Template ID
             data
         )
         .then((response) => {

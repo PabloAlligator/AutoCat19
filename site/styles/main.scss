@@ -94,23 +94,26 @@ body {
                 padding: 24px 40px;
                 font-size: 32px;
                 font-family: $RussoOne;
+                background: $red;
+                border-radius: 8px;
                 z-index: 3;
                 transition: all 0.3s ease;
 
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    border-radius: 4px;
-                    inset: 0;
-                    background: red;
-                    transform: skew(-15deg);
-                    z-index: -1;
-                    transition: all 0.3s ease;
-                }
+                // &::before {
+                //     content: '';
+                //     position: absolute;
+                //     border-radius: 4px;
+                //     inset: 0;
+                //     background: red;
+                //     transform: skew(-15deg);
+                //     z-index: -1;
+                //     transition: all 0.3s ease;
+                // }
 
                 &:hover {
                     color: black;
+                    background: $white;
 
                     &::before {
                         background: $white;
@@ -126,24 +129,27 @@ body {
                 padding: 24px 40px;
                 font-size: 32px;
                 font-family: $RussoOne;
+                background: transparent;
+                border: 3px solid $white;
+                border-radius: 8px;
                 z-index: 3;
                 transition: all 0.3s ease;
 
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    border-radius: 4px;
-                    background: transparent;
-                    transform: skew(-15deg);
-                    z-index: -1;
-                    border: 4px solid $white;
-                    transition: all 0.3s ease;
-                }
+                // &::before {
+                //     content: '';
+                //     position: absolute;
+                //     inset: 0;
+                //     border-radius: 4px;
+                //     background: transparent;
+                //     transform: skew(-15deg);
+                //     z-index: -1;
+                //     border: 4px solid $white;
+                //     transition: all 0.3s ease;
+                // }
 
                 &:hover {
-                    color: black;
+                    color: red;
 
                     &::before {
                         background: $white;
@@ -324,7 +330,7 @@ body {
         position: relative;
         z-index: 1;
         max-width: 1720px;
-        margin: 0 auto;
+        // margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
@@ -473,17 +479,19 @@ body {
 
 .btn-primary {
     color: $white;
+    background-color: $red;
+    border-radius: 8px;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: 4px;
-        background: $red;
-        transform: skew(-15deg);
-        z-index: -1;
-        transition: all 0.35s ease;
-    }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     inset: 0;
+    //     border-radius: 4px;
+    //     background: $red;
+    //     transform: skew(-15deg);
+    //     z-index: -1;
+    //     transition: all 0.35s ease;
+    // }
 
     &:hover {
         color: $black;
@@ -497,18 +505,21 @@ body {
 
 .btn-secondary {
     color: $white;
+    background: transparent;
+    border: 2px solid $white;
+    border-radius: 8px;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: 4px;
-        background: transparent;
-        border: 3px solid $white;
-        transform: skew(-15deg);
-        z-index: -1;
-        transition: all 0.35s ease;
-    }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     inset: 0;
+    //     border-radius: 4px;
+    //     background: transparent;
+    //     border: 3px solid $white;
+    //     transform: skew(-15deg);
+    //     z-index: -1;
+    //     transition: all 0.35s ease;
+    // }
 
     &:hover {
         color: $black;
@@ -613,7 +624,7 @@ body {
 
 @media (max-width: 480px) {
     .about {
-        padding: 50px 12px 70px;
+        padding: 50px 0px 70px;
 
         &-title {
             font-size: clamp(38px, 11vw, 58px);
@@ -625,7 +636,7 @@ body {
         }
 
         &-features li strong {
-            font-size: 28px;
+            font-size: 24px;
         }
 
         &-cta {
@@ -636,6 +647,79 @@ body {
             max-width: 320px;
             border-radius: 12px;
         }
+    }
+}
+
+@media (max-width: 420px) {
+
+    .about {
+        padding: 50px 15px 70px;
+        overflow-x: hidden;
+    }
+
+    .about-container {
+        padding: 0 15px;
+        gap: 40px;
+    }
+
+    .about-content,
+    .about-visual {
+        min-width: 0;
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .about-title {
+        font-size: clamp(34px, 10vw, 46px);
+        letter-spacing: 1px;
+        word-break: break-word;
+    }
+
+    .about-label {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .about-description {
+        font-size: 15px;
+        line-height: 26px;
+        max-width: 100%;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .about-features li {
+        word-break: break-word;
+    }
+
+    .about-features li strong {
+        font-size: 22px;
+    }
+
+    .about-cta {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .btn {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        font-size: 18px;
+        padding: 14px 20px;
+    }
+
+    .about-image-frame {
+        max-width: 100%;
+    }
+
+    .about-image-frame video {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -1138,19 +1222,21 @@ body {
             padding: 12px 20px;
             font-size: 16px;
             font-family: $RussoOne;
+            background: $red;
+            border-radius: 8px;
             z-index: 3;
             transition: all 0.3s ease;
 
-            &::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                border-radius: 4px;
-                background: $red;
-                transform: skew(-15deg);
-                z-index: -1;
-                transition: all 0.3s ease;
-            }
+            // &::before {
+            //     content: '';
+            //     position: absolute;
+            //     inset: 0;
+            //     border-radius: 4px;
+            //     background: $red;
+            //     transform: skew(-15deg);
+            //     z-index: -1;
+            //     transition: all 0.3s ease;
+            // }
 
             &:hover {
                 color: $black;
@@ -1219,21 +1305,23 @@ body {
         color: $black;
         padding: 16px 32px;
         font-size: 20px;
+        background: $white;
+        border-radius: 8px;
         font-family: $RussoOne;
         z-index: 3;
         transition: all 0.3s ease;
         display: inline-block;
 
-        &::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 4px;
-            background: $white;
-            transform: skew(-15deg);
-            z-index: -1;
-            transition: all 0.3s ease;
-        }
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     inset: 0;
+        //     border-radius: 4px;
+        //     background: $white;
+        //     transform: skew(-15deg);
+        //     z-index: -1;
+        //     transition: all 0.3s ease;
+        // }
 
         &:hover {
             color: $white;
@@ -1547,24 +1635,26 @@ body {
     padding: 16px 40px;
     font-size: 20px;
     font-family: $RussoOne;
+    background: $white;
+    border-radius: 8px;
     z-index: 3;
     transition: all 0.3s ease;
     display: inline-block;
     min-width: 320px;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: 4px;
-        background: $white;
-        transform: skew(-15deg);
-        z-index: -1;
-        transition: all 0.3s ease;
-    }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     inset: 0;
+    //     border-radius: 4px;
+    //     background: $white;
+    //     transform: skew(-15deg);
+    //     z-index: -1;
+    //     transition: all 0.3s ease;
+    // }
 
     &:hover {
-        color: $white;
+        color: $red;
 
         &::before {
             background: $red;
@@ -1694,14 +1784,14 @@ body {
     color: $white;
     position: relative;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse at 50% 50%, rgba($red, 0.04) 0%, transparent 70%);
-        pointer-events: none;
-        z-index: 0;
-    }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     inset: 0;
+    //     background: radial-gradient(ellipse at 50% 50%, rgba($red, 0.04) 0%, transparent 70%);
+    //     pointer-events: none;
+    //     z-index: 0;
+    // }
 
     &__container {
         position: relative;
@@ -1744,6 +1834,10 @@ body {
 .form-success,
 .form-error {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 24px;
@@ -1847,18 +1941,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: $red;
-        transform: skew(-15deg);
-        z-index: -1;
-        transition: all 0.35s ease;
-    }
-
     &:hover {
-        color: $white;
+        color: $red;
 
         &::before {
             background: $black;
@@ -1875,6 +1959,7 @@ body {
 .form-btn--secondary {
     background: transparent;
     border: 2px solid $white;
+    margin-top: 24px;
     color: $white;
 
     &:hover {
